@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="images/back.png" id="backBtn">
+
+        <div class="gallery">
+            <div>
+                <span><img src="images/img1.png"></span>
+                <span><img src="images/img3.png"></span>
+                <span><img src="images/image3.png"></span>
+            </div>
+    
+            <div>
+                <span><img src="images/img4.png"></span>
+                <span><img src="images/img5.png"></span>
+                <span><img src="images/img6.png"></span>
+            </div>
+        </div>
+
+        <img src="images/next.png" id="nextBtn">
+    </div>
+</body>
+<script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel",(evt)=>{
+        scrollContainer.style.scrollBehavior = "auto";
+        evt.preventDefault += evt.deltaY;
+    })
+    backBtn.addEventListener("click",()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft+=900;
+    })
+    nextBtn.addEventListener("click",()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft-=900;
+    })
+</script>
+</html>
