@@ -25,7 +25,6 @@ function NameHandler(){
 
 function PhoneHandler(){
     var Phone = document.getElementById("phone").value;
-    console.log(Phone);
     if(Phone.length==0){
         PhoneError.style.color = "red";
         NameError.innerHTML="required field"
@@ -44,7 +43,6 @@ function PhoneHandler(){
 function EmailHandler(){
     var Email = document.getElementById("email").value;
     var Eregex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
-    console.log(Email);
     if(Email.length==0){
         EmailError.style.color = "red";
         EmailError.innerHTML="required field";
@@ -84,9 +82,5 @@ function ValidateForm(){
         SubmitError.innerHTML = "Please fix the issue";
         return false;
     }
-    console.log(MessegeHandler());
-    console.log(EmailHandler());
-    console.log(PhoneHandler());
-    console.log(NameHandler());
 }
 
